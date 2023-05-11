@@ -7,11 +7,7 @@ import uz.uzapexsoft.domain.models.*
 import uz.uzapexsoft.domain.models.params.RegistrationParam
 import uz.uzapexsoft.domain.repository.AuthRepository
 
-class AuthRepositoryImpl(
-    private val authStorage: AuthStorage,
-    private val saveAuthParamMapToStorage: SingleMapper<RegistrationParam, AuthenticationRequest>,
-    private val authRequestMapToDomain: SingleMapper<AuthenticationRequest, Authentication>
-) : AuthRepository {
+class AuthRepositoryImpl(private val authStorage: AuthStorage, private val authRequestMapToDomain: SingleMapper<AuthenticationRequest, Authentication>, private val saveAuthParamMapToStorage: SingleMapper<RegistrationParam, AuthenticationRequest>) : AuthRepository {
 
     override fun saveAuthentication(saveParam: RegistrationParam): Boolean {
         val authentication = saveAuthParamMapToStorage(value = saveParam)

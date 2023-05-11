@@ -9,34 +9,34 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvTitle"
+        style="@style/BoldTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/registration"
-        style="@style/BoldTextView"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/etPhoneNumber"
-        style="@style/BasicEditText"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/layout_height_42"
-        android:layout_marginTop="128dp"
-        android:hint="@string/enter_phone_number"
-        android:textColor="@color/black"
-        android:textColorHint="@color/heather"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/etEmail"
         style="@style/BasicEditText"
         android:layout_width="match_parent"
         android:layout_height="@dimen/layout_height_42"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="128dp"
         android:hint="@string/enter_email"
         android:textColor="@color/black"
         android:textColorHint="@color/heather"
-        app:layout_constraintTop_toBottomOf="@id/etPhoneNumber" />
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etPhoneNumber"
+        style="@style/BasicEditText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height_42"
+        android:layout_marginTop="16dp"
+        android:hint="@string/enter_phone_number"
+        android:textColor="@color/black"
+        android:textColorHint="@color/heather"
+        app:layout_constraintTop_toBottomOf="@id/etEmail" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/etPassword"
@@ -47,7 +47,7 @@
         android:hint="@string/enter_password"
         android:textColor="@color/black"
         android:textColorHint="@color/heather"
-        app:layout_constraintTop_toBottomOf="@id/etEmail" />
+        app:layout_constraintTop_toBottomOf="@id/etPhoneNumber" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/etConfirmPassword"
@@ -84,8 +84,8 @@
         style="@style/BoldTextView"
         android:layout_marginStart="8dp"
         android:text="@string/login"
-        android:textSize="@dimen/textSize_12"
         android:textColor="@color/denim"
+        android:textSize="@dimen/textSize_12"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tvDoYouHaveAccount" />

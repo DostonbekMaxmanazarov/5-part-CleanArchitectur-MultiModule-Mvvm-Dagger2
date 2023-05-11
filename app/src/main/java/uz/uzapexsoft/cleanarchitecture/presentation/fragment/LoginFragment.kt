@@ -4,23 +4,22 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import uz.uzapexsoft.cleanarchitecture.R
 import uz.uzapexsoft.cleanarchitecture.databinding.FragmentLoginBinding
 import uz.uzapexsoft.cleanarchitecture.presentation.vm.LoginViewModel
-import uz.uzapexsoft.cleanarchitecture.presentation.vm.factory.LoginViewModelFactory
+import uz.uzapexsoft.cleanarchitecture.presentation.vm.impl.LoginViewModelImpl
 
 class LoginFragment : Fragment(R.layout.fragment_login) {
 
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var vm: LoginViewModel
+    private val vm: LoginViewModel by viewModel<LoginViewModelImpl>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         _binding = FragmentLoginBinding.bind(view)
         super.onViewCreated(view, savedInstanceState)
-        vm = ViewModelProvider(this, LoginViewModelFactory(requireContext()))[LoginViewModel::class.java]
         initClickView()
         observeData()
     }
