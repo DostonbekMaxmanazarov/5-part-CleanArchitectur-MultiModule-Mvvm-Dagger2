@@ -1,4 +1,4 @@
-package uz.uzapexsoft.cleanarchitecture.presentation.vm.impl
+package uz.uzapexsoft.cleanarchitecture.presentation.vm
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import uz.uzapexsoft.domain.models.params.LoginParam
 import uz.uzapexsoft.domain.usecase.GetAuthUseCase
 
-class LoginViewModelImpl constructor(private val getAuthUseCase: GetAuthUseCase) : ViewModel() {
+class LoginViewModel constructor(private val getAuthUseCase: GetAuthUseCase) : ViewModel() {
 
     private var _resultLiveData = MutableLiveData<Boolean>()
     val resultLiveData: LiveData<Boolean> get() = _resultLiveData
