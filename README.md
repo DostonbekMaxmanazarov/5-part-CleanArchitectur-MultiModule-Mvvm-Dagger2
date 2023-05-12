@@ -6,6 +6,5 @@ Project: This project is simply a user authorization project". Contained: Recomm
 Koin har qanday Kotlin applicationga(Multiplatform, Android, Backend ...) dependency injectionning oson va samarali usulini taqdim etadi.
 
 Koinning maqsadlari:
-- Dependency Injection foydalanish juda ham soddalashtirilgan
-- Kotlin DSL o'qish oson, ishlatish uchun qulay, har qanday dasturni yozish imkonini beradi
-- Android ekotizimidan Ktor kabi ko'proq backend ehtiyojlariga turli xil integratsiyani ta'minlaydi
+- Dependency Injectionda foydalanish juda ham soddalashtirilgan
+- Kotlin DSL o'qish uchun oson, ishlatish uchun qulay, har qanday dasturni yozish imkonini beradi
