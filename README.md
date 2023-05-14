@@ -13,17 +13,17 @@ Umuman olganda, Koin Kotlin-ga asoslangan Android ilovalaridagi dependencylarni 
 :green_circle: ***Application & Module DSL:***
 
 Koin bizga Koin application elementlarini tavsiflash uchun bir nechta kalit so'zlarni taklif qiladi:
-- **```Application DSL```** - bu DSL vazifasi Koin container konfiguratsiyasini tavsiflash uchundir.
-- **```Module DSL```** - bu DSL vasivasi esa inject qilinishi kerak bo'lgan componentlarni tavsiflash uchundir
+- **```Application DSL```** - to describe the Koin container configuration.
+- **```Module DSL```** - to describe the components that have to be injected.
 
 :green_circle: ***Application DSL***
 
 KoinApplication obyekti Koin container obyekti configuratsiyasidir. Bu bizga logging, properties loading va modullarni sozlash imkonini beradi.
 Yangi KoinApplication yaratish uchun bir qancha funksiyalardan foydalanishimiz mumkin: Ulardan proekt shu proektda ishlatgan bir nechtasini ko'rsatib o'taman.
-- **```GlobalContext```** - GlobalContext API dan foydalanishga ruxsat beradi.
-- **```startKoin {}```** - KoinApplication conteyner konfiguratsiyasini yaratadi va uni ro'yxatdan o'tkazadi.
-- **```modules()```** - Conteynerga yuklash uchun Koin modullar ro'yxatini o'rnatadi (list or vararg list).
-- **```logger()```** - Logger dasturidan foydalanishni tavsiflaydi, va loggerning qanday darajada ishlashini belgilashimiz mumkin (odatda default EmptyLogger dan foydalaniladi.)
+- **```GlobalContext```** - to allow the use of GlobalContext API.
+- **```startKoin {}```** - create a KoinApplication container configuration and register it in the.
+- **```modules()```** - set a list of Koin modules to load in the container (list or vararg list).
+- **```logger()```** - describe what level and Logger implementation to use (by default use the EmptyLogger)
 
 :white_check_mark: Application DSL dan mana shu proektda qanday foydalanganimni ko'rsatib o'taman:
 ```kotlin 
@@ -38,3 +38,63 @@ class App : Application() {
     }
 }
 ```
+:green_circle: ***Module DSL:***
+
+Koin moduli applicationimiz uchun inject qilinadigan modullarni to'playdi. Yangi modul yaratish uchun quyidagi funksiyalardan foydalanishimiz mumkin:
+
+- **``` module {}```** - create a Koin Module.
+- **``` factory {}```** - provide a factory bean definition
+- **``` single {}```** - provide a singleton bean definition (also aliased as bean)
+- **``` get ()```** - resolve a component dependency (also can use name, scope or parameters)
+- **``` bind ()```** - add type to bind for given bean definition
+
+:white_check_mark: Module DSL dan proektimda qanday foydalanganimni ko'rsatib o'taman: Bunda modullarimni 3 qismga bo'lib olganman, **```ApplicationModule```**, **```DataModule```**, **```DomainModule```***.
+- Application module:
+```kotlin 
+var appModule = module {
+    viewModel {
+        RegistrationViewModelImpl(saveAuthUseCase = get())
+    } bind RegistrationViewModel::class
+
+    viewModel {
+        LoginViewModelImpl(getAuthUseCase = get())
+    } bind LoginViewModel::class
+}
+```
+- Domain module:
+```kotlin
+val domainModule = module {
+    factory<SaveAuthUseCase> {
+        SaveAuthUseCaseImpl(authRepository = get())
+    }
+
+    factory<GetAuthUseCase> {
+        GetAuthUseCaseImpl(authRepository = get())
+    }
+}
+```
+- Data module
+```kotlin 
+val dataModule = module {
+
+    single<SingleMapper<RegistrationParam, AuthenticationRequest>>(named(MAP_TO_STORAGE_NAMED)) {
+        SaveAuthenticationParamMapToStorage()
+    }
+
+    single<SingleMapper<AuthenticationRequest, Authentication>>(named(MAP_TO_DOMAIN_NAMED)) {
+        AuthenticationRequestMapToDomain()
+    }
+
+    single<AuthStorage> {
+        AuthStorageSharedPrefImpl(context = get())
+    }
+
+
+    single<AuthRepository> {
+        AuthRepositoryImpl(authStorage = get(), authRequestMapToDomain = get(qualifier = named(MAP_TO_DOMAIN_NAMED)), saveAuthParamMapToStorage = get(qualifier = named(MAP_TO_STORAGE_NAMED)))
+    }
+}
+```
+
+
+
