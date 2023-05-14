@@ -24,3 +24,17 @@ Yangi KoinApplication yaratish uchun bir qancha funksiyalardan foydalanishimiz m
 - **```startKoin {}```** - KoinApplication conteyner konfiguratsiyasini yaratadi va uni ro'yxatdan o'tkazadi.
 - **```modules()```** - Conteynerga yuklash uchun Koin modullar ro'yxatini o'rnatadi (list or vararg list).
 - **```logger()```** - Logger dasturidan foydalanishni tavsiflaydi, va loggerning qanday darajada ishlashini belgilashimiz mumkin (odatda default EmptyLogger dan foydalaniladi.)
+
+Application DSL dan mana shu proektda qanday foydalanganimni ko'rsatib o'taman:
+```kotlin 
+class App : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        startKoin {
+            androidLogger(Level.DEBUG)
+            androidContext(this@App)
+            modules(listOf(appModule, domainModule, dataModule))
+        }
+    }
+}
+```
