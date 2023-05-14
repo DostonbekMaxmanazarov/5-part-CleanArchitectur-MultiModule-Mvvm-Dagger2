@@ -34,8 +34,5 @@ val dataModule = module {
     single<AuthRepository> {
         AuthRepositoryImpl(authStorage = get(), authRequestMapToDomain = get(qualifier = named(MAP_TO_DOMAIN_NAMED)), saveAuthParamMapToStorage = get(qualifier = named(MAP_TO_STORAGE_NAMED)))
     }
-
-
-
 }
 
