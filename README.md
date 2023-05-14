@@ -25,7 +25,7 @@ Yangi KoinApplication yaratish uchun bir qancha funksiyalardan foydalanishimiz m
 - **```modules()```** - Conteynerga yuklash uchun Koin modullar ro'yxatini o'rnatadi (list or vararg list).
 - **```logger()```** - Logger dasturidan foydalanishni tavsiflaydi, va loggerning qanday darajada ishlashini belgilashimiz mumkin (odatda default EmptyLogger dan foydalaniladi.)
 
-Application DSL dan mana shu proektda qanday foydalanganimni ko'rsatib o'taman:
+[ ] Application DSL dan mana shu proektda qanday foydalanganimni ko'rsatib o'taman:
 ```kotlin 
 class App : Application() {
     override fun onCreate() {
