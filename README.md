@@ -48,7 +48,7 @@ Koin moduli applicationimiz uchun inject qilinadigan modullarni to'playdi. Yangi
 - **``` get ()```** - resolve a component dependency (also can use name, scope or parameters)
 - **``` bind ()```** - add type to bind for given bean definition
 
-:white_check_mark: Module DSL dan proektimda qanday foydalanganimni ko'rsatib o'taman: Bunda modullarimni 3 qismga bo'lib olganman, **```ApplicationModule```**, **```DataModule```**, **```DomainModule```***.
+:white_check_mark: Module DSL dan proektimda qanday foydalanganimni ko'rsatib o'taman: Bunda modullarimni 3 qismga bo'lib olganman, **ApplicationModule**, **DataModule**, **DomainModule**.
 - Application module:
 ```kotlin 
 var appModule = module {
