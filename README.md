@@ -15,3 +15,12 @@ Umuman olganda, Koin Kotlin-ga asoslangan Android ilovalaridagi dependencylarni 
 Koin bizga Koin application elementlarini tavsiflash uchun bir nechta kalit so'zlarni taklif qiladi:
 - **```Application DSL```** - bu DSL vazifasi Koin container konfiguratsiyasini tavsiflash uchundir.
 - **```Module DSL```** - bu DSL vasivasi esa inject qilinishi kerak bo'lgan componentlarni tavsiflash uchundir
+
+***Application DSL***
+
+KoinApplication obyekti Koin container obyekti configuratsiyasidir. Bu bizga logging, properties loading va modullarni sozlash imkonini beradi.
+Yangi KoinApplication yaratish uchun bir qancha funksiyalardan foydalanishimiz mumkin: Ulardan proekt shu proektda ishlatgan bir nechtasini ko'rsatib o'taman.
+- **```GlobalContext```** - GlobalContext API dan foydalanishga ruxsat beradi.
+- **```startKoin {}```** - KoinApplication conteyner konfiguratsiyasini yaratadi va uni ro'yxatdan o'tkazadi.
+- **```modules()```** - Conteynerga yuklash uchun Koin modullar ro'yxatini o'rnatadi (list or vararg list).
+- **```logger()```** - Logger dasturidan foydalanishni tavsiflaydi, va loggerning qanday darajada ishlashini belgilashimiz mumkin (odatda default EmptyLogger dan foydalaniladi.)
