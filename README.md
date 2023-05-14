@@ -8,4 +8,5 @@ Koin Android hamjamiyatida Dagger kabi dependency injection frameworkiga nisbata
 Umuman olganda, Koin Kotlin-ga asoslangan Android ilovalaridagi dependencylarni boshqarishning sodda va moslashuvchan usulini taqdim etadi, bu esa dasturchilarga yuqori sifatli projectlarni yaratish va ularga xizmat ko'rsatishni osonlashtiradi.
 
 **```Koin DSL```**
+
 Koin applicationimizda anotationdan foydlanish yoki kod generatsiya qilish o'rniga, Koin DSL-ni taqdim etadi. Koin o'zining Kotlin DSL bilan dependency injectionni tayyorlash uchun aqlli funktsional APIni taklif qiladi.
