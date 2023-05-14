@@ -7,16 +7,16 @@ Project: This project is simply a user authorization project". Contained: Recomm
 Koin Android hamjamiyatida Dagger kabi dependency injection frameworkiga nisbatan sodda va qulayroq, shu sababli tobora ommalashib bormoqda deb o'ylayman. Bu kichik va o'rta projectlar uchun yaxshi tanlov, va Model-View-ViewModel (MVVM) arxitekturasidan foydalanadigan projectlar uchun juda mos keladi.
 Umuman olganda, Koin Kotlin-ga asoslangan Android ilovalaridagi dependencylarni boshqarishning sodda va moslashuvchan usulini taqdim etadi, bu esa dasturchilarga yuqori sifatli projectlarni yaratish va ularga xizmat ko'rsatishni osonlashtiradi.
 
-:grey_exclamation: ***Koin DSL:***
+:green_circle: ***Koin DSL:***
 - Koin applicationimizda anotationdan foydlanish yoki kod generatsiya qilish o'rniga, Koin DSL-ni taqdim etadi. Koin o'zining Kotlin DSL bilan dependency injectionni tayyorlash uchun aqlli funktsional APIni taklif qiladi.
 
-:grey_exclamation: ***Application & Module DSL:***
+:green_circle: ***Application & Module DSL:***
 
 Koin bizga Koin application elementlarini tavsiflash uchun bir nechta kalit so'zlarni taklif qiladi:
 - **```Application DSL```** - bu DSL vazifasi Koin container konfiguratsiyasini tavsiflash uchundir.
 - **```Module DSL```** - bu DSL vasivasi esa inject qilinishi kerak bo'lgan componentlarni tavsiflash uchundir
 
-:grey_exclamation: ***Application DSL***
+:green_circle: ***Application DSL***
 
 KoinApplication obyekti Koin container obyekti configuratsiyasidir. Bu bizga logging, properties loading va modullarni sozlash imkonini beradi.
 Yangi KoinApplication yaratish uchun bir qancha funksiyalardan foydalanishimiz mumkin: Ulardan proekt shu proektda ishlatgan bir nechtasini ko'rsatib o'taman.
