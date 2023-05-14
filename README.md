@@ -9,3 +9,8 @@ Umuman olganda, Koin Kotlin-ga asoslangan Android ilovalaridagi dependencylarni 
 
 ***Koin DSL:***
 - Koin applicationimizda anotationdan foydlanish yoki kod generatsiya qilish o'rniga, Koin DSL-ni taqdim etadi. Koin o'zining Kotlin DSL bilan dependency injectionni tayyorlash uchun aqlli funktsional APIni taklif qiladi.
+
+***Application & Module DSL:***
+Koin bizga Koin application elementlarini tavsiflash uchun bir nechta kalit so'zlarni taklif qiladi:
+- **```Application DSL```** - bu DSL vazifasi Koin container konfiguratsiyasini tavsiflash uchundir.
+- **```Module DSL```** - bu DSL vasivasi esa inject qilinishi kerak bo'lgan componentlarni tavsiflash uchundir
