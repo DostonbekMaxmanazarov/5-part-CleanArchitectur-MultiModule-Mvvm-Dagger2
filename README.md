@@ -10,13 +10,13 @@ Umuman olganda, Koin Kotlin-ga asoslangan Android ilovalaridagi dependencylarni 
 :grey_exclamation: ***Koin DSL:***
 - Koin applicationimizda anotationdan foydlanish yoki kod generatsiya qilish o'rniga, Koin DSL-ni taqdim etadi. Koin o'zining Kotlin DSL bilan dependency injectionni tayyorlash uchun aqlli funktsional APIni taklif qiladi.
 
-:relaxed: ***Application & Module DSL:***
+:grey_exclamation: ***Application & Module DSL:***
 
 Koin bizga Koin application elementlarini tavsiflash uchun bir nechta kalit so'zlarni taklif qiladi:
 - **```Application DSL```** - bu DSL vazifasi Koin container konfiguratsiyasini tavsiflash uchundir.
 - **```Module DSL```** - bu DSL vasivasi esa inject qilinishi kerak bo'lgan componentlarni tavsiflash uchundir
 
-***Application DSL***
+:grey_exclamation: ***Application DSL***
 
 KoinApplication obyekti Koin container obyekti configuratsiyasidir. Bu bizga logging, properties loading va modullarni sozlash imkonini beradi.
 Yangi KoinApplication yaratish uchun bir qancha funksiyalardan foydalanishimiz mumkin: Ulardan proekt shu proektda ishlatgan bir nechtasini ko'rsatib o'taman.
