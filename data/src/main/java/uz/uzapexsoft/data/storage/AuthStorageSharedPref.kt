@@ -1,8 +1,8 @@
 package uz.uzapexsoft.data.storage
 
-import uz.uzapexsoft.data.storage.models.AuthenticationRequest
+import uz.uzapexsoft.data.models.AuthenticationRequest
 
-interface AuthStorage {
+interface AuthStorageSharedPref {
     fun getAuthentication(): AuthenticationRequest
     fun saveAuthentication(user: AuthenticationRequest): Boolean
 }

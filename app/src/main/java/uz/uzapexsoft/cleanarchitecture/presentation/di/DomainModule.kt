@@ -1,17 +1,20 @@
 package uz.uzapexsoft.cleanarchitecture.presentation.di
 
-import org.koin.dsl.module
+import dagger.Module
+import dagger.Provides
+import uz.uzapexsoft.domain.repository.AuthRepository
 import uz.uzapexsoft.domain.usecase.GetAuthUseCase
 import uz.uzapexsoft.domain.usecase.SaveAuthUseCase
 import uz.uzapexsoft.domain.usecase.impl.GetAuthUseCaseImpl
 import uz.uzapexsoft.domain.usecase.impl.SaveAuthUseCaseImpl
 
-val domainModule = module {
-    factory<SaveAuthUseCase> {
-        SaveAuthUseCaseImpl(authRepository = get())
-    }
+@Module
+class DomainModule {
+    @Provides
+    fun provideGetAuthUseCase(authRepository: AuthRepository): GetAuthUseCase =
+            GetAuthUseCaseImpl(authRepository = authRepository)
 
-    factory<GetAuthUseCase> {
-        GetAuthUseCaseImpl(authRepository = get())
-    }
+    @Provides
+    fun provideSaveAuthUseCase(authRepository: AuthRepository): SaveAuthUseCase =
+            SaveAuthUseCaseImpl(authRepository = authRepository)
 }

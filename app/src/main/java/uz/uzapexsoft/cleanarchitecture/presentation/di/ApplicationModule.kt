@@ -1,19 +1,12 @@
 package uz.uzapexsoft.cleanarchitecture.presentation.di
 
-import org.koin.androidx.viewmodel.dsl.viewModel
-import org.koin.dsl.bind
-import org.koin.dsl.module
-import uz.uzapexsoft.cleanarchitecture.presentation.vm.LoginViewModel
-import uz.uzapexsoft.cleanarchitecture.presentation.vm.RegistrationViewModel
-import uz.uzapexsoft.cleanarchitecture.presentation.vm.impl.LoginViewModelImpl
-import uz.uzapexsoft.cleanarchitecture.presentation.vm.impl.RegistrationViewModelImpl
+import android.content.Context
+import dagger.Module
+import dagger.Provides
 
-var appModule = module {
-    viewModel {
-        RegistrationViewModelImpl(saveAuthUseCase = get())
-    } bind RegistrationViewModel::class
+@Module
+class ApplicationModule(private val context: Context) {
 
-    viewModel {
-        LoginViewModelImpl(getAuthUseCase = get())
-    } bind LoginViewModel::class
+    @Provides
+    fun provideContext(): Context = context
 }

@@ -1,4 +1,4 @@
-package uz.uzapexsoft.data.storage.models
+package uz.uzapexsoft.data.models
 
 class AuthenticationRequest(
     val email: String = "",
