@@ -1,3 +1,6 @@
+# 4-part-CleanArchitecture-MultiModule-Mvvm-Koin
+Project: This project is simply a user authorization project". Contained: Recommended app architecture, MultiModule, Mvvm, Koin(Dependency Injection).
+
 [Dagger 2](https://developer.android.com/training/dependency-injection/dagger-basics) - bu Java va Android uchun mashhur dependency injection frameworkidir. Bu bizning ilovangizdagi dependencylarni boshqarishga yordam beradigan, compile time dependency injection frameworki. Dependency Injection - bu ob'ektlarga o'zlarining dependencylarini bevosita qo'lda yaratmasdan dependencylarni tashqaridan  ob'ektlarga taqdim etadi("injected"). Ushbu yondashuv bir xil dependencylarni qayta qayta qo'lda yaratmasdan, faqat bir marta di orqali yaratib foydalanish va kodning testdan o'tkazishiga yordam beradi. Dagger 2 kompilyatsiya jarayonida annotationlar va dependency graph asosida kod yaratish orqali ishlaydi. Dependencylarni provide qilishda yoki inject qilishda Java annotationlardan foydalanadi. Generatsiya qilingan kod dependencylarning obyektlarini yaratadi va boshqaradi.
 
 Dagger 2-dagi ba'zi asosiy tushunchalar:
